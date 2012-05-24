@@ -3,6 +3,7 @@ package com.whan;
 import org.junit.Test;
 
 import com.whan.spring.SpringTest;
+//≤‚ ‘whan
 
 public class test {
 	@Test
