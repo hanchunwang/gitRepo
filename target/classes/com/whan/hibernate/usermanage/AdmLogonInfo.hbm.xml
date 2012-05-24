@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2012-5-7 10:42:55 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.whan.hibernate.usermanage.AdmLogonInfo" table="adm_logon_info" catalog="usermanage">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="userId" type="string">
+            <column name="user_id" length="10">
+                <comment>&#181;&#199;&#194;&#188;&#211;&#195;&#187;&#167;ID</comment>
+            </column>
+        </property>
+        <property name="logonDate" type="timestamp">
+            <column name="logon_date" length="19" not-null="true">
+                <comment>&#181;&#199;&#194;&#188;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="logonIp" type="string">
+            <column name="logon_ip" length="60">
+                <comment>&#181;&#199;&#194;&#188;IP&#181;&#216;&#214;&#183;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

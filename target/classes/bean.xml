@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"   
+       xmlns:util="http://www.springframework.org/schema/util"   
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans       		
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/context  
+           http://www.springframework.org/schema/context/spring-context-3.1.xsd          
+           ">
+           
+	<bean id="personService" class="com.whan.spring.PersonService">
+		<property name="name" value="lanlan"/>
+	</bean>
+
+	<bean id="chinese" class="com.whan.spring.Chinese">
+		<!-- 将stoneAxe注入给axe属性 -->
+		<!-- 设值注入 -->
+		<!--  
+		<property name="axe" ref="steelAxe"/>
+		-->
+		<!-- 构造注入 -->
+		<constructor-arg><ref bean="steelAxe"/></constructor-arg>
+	</bean>
+	<bean id="stoneAxe" class="com.whan.spring.StoneAxe"  />
+	<bean id="steelAxe" class = "com.whan.spring.SteelAxe"  scope="prototype"/>
+	
+	<!-- 配置数据源实例的bean -->
+	<bean id="dataSource"
+        class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+    <property name="driverClass" value="${jdbc.driverClassName}"/>
+    <property name="jdbcUrl" value="${jdbc.url}"/>
+    <property name="user" value="${jdbc.username}"/>
+    <property name="password" value="${jdbc.password}"/>
+    
+</bean>
+
+<context:property-placeholder location="classpath:jdbc.properties"/>
+		
+	
+</beans>
