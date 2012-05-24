@@ -6,6 +6,7 @@ public class Chinese implements Person {
 			
 		}
 		
+		//我是中国人
 		public Chinese(Axe axe) {
 			this.axe = axe;
 		}
